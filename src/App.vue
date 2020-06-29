@@ -1,32 +1,45 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <router-link to="/qqMap">腾讯地图</router-link>
+    <router-link to="/gaodeMap">高德地图</router-link>
+    <router-view />
   </div>
 </template>
+<script>
+export default {
+  name: 'app',
+  data() {
+    return {
+      longitude: 0, //经度
+      latitude: 0, //纬度
+      city: '',
+      accuracy: 0 //误差范围
+    }
+  },
+  methods: {},
+  mounted() {}
+}
+</script>
 
 <style lang="less">
+body {
+  height: 100%;
+  font-size: 14px;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Microsoft Yahei', 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  margin-top: 60px;
+  height: 100%;
 }
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+a {
+  padding: 5px 10px;
+  border: 1px solid rgb(0, 153, 255);
+  margin: 0 20px;
+  color: #fff;
+  background: rgb(0, 153, 255);
 }
 </style>
